@@ -8,7 +8,6 @@ public class Main {
 	System.out.println(ed.indice("o"));
 	System.out.println(ed.estaVazia());
 	ed.adicionar("carol");
-	ed.excluir("carol");
 	ed.adicionar("carlos");
 	ed.adicionar("caio");
 	ed.adicionar("celia");
@@ -16,10 +15,9 @@ public class Main {
 	ed.adicionar("cz");
 	ed.adicionar("cicero");
 	ed.mostrarNomesDeUmaLetra("c");
+	System.out.println();
 	ed.excluir("caio");
-	ed.mostrarNomesDeUmaLetra("c");
 	ed.excluir("cz");
-	ed.mostrarNomesDeUmaLetra("c");
 	ed.adicionar("car");
 	ed.adicionar("camila");
 	ed.renomear("cicero", "cassio");
