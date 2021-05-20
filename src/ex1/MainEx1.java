@@ -1,9 +1,9 @@
 package ex1;
 
-public class Main {
+public class MainEx1 {
 
 	public static void main(String[] args) {
-	ED ed = new ED();
+	EdEx1 ed = new EdEx1();
 	
 	System.out.println(ed.indice("o"));
 	System.out.println(ed.estaVazia());
@@ -24,5 +24,6 @@ public class Main {
 	ed.mostrarNomesDeUmaLetra("c");
 	System.out.println(ed.getQntd());
 	System.out.println(ed.estaVazia());
+	ed.mostrarLista();
 	}
 }

@@ -1,12 +1,12 @@
 package ex1;
 
-public class Nome {
+public class NomeEx1 {
 
 	private String nome;
-	private Nome anterior;
-	private Nome proximo;
+	private NomeEx1 anterior;
+	private NomeEx1 proximo;
 	
-	public Nome(String nome) {
+	public NomeEx1(String nome) {
 		this.nome = nome;
 	}
 
@@ -18,19 +18,19 @@ public class Nome {
 		this.nome = nome;
 	}
 
-	public Nome getAnterior() {
+	public NomeEx1 getAnterior() {
 		return anterior;
 	}
 
-	public void setAnterior(Nome anterior) {
+	public void setAnterior(NomeEx1 anterior) {
 		this.anterior = anterior;
 	}
 
-	public Nome getProximo() {
+	public NomeEx1 getProximo() {
 		return proximo;
 	}
 
-	public void setProximo(Nome proximo) {
+	public void setProximo(NomeEx1 proximo) {
 		this.proximo = proximo;
 	}
 }

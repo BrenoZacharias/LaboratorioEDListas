@@ -1,9 +1,9 @@
 package ex2;
 
-public class Main {
+public class MainEx2 {
 
 	public static void main(String[] args) {
-		EDVetorCircular ed = new EDVetorCircular();
+		EDVetorCircularEx2 ed = new EDVetorCircularEx2();
 
 		System.out.println("esta vazia? " + ed.vazia());
 		System.out.println("esta cheia? " + ed.cheia());

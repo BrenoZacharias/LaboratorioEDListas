@@ -1,11 +1,11 @@
 package ex3;
-public class controller {
+public class controllerEx3 {
 	private Object[] pilha;
 	private int elementosA, elementosB, pilhaA, pilhaB;
 	private Object topoA;
 	private Object topoB;
 	
-	public controller() {
+	public controllerEx3() {
 		this.elementosA = -1;
 		this.elementosB = -1;
 		this.pilha = new Object[10];

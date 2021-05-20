@@ -1,14 +1,16 @@
 package ex1;
 
-public class ED {
+import javax.swing.JOptionPane;
 
-	private final Letra vetorLetra[] = new Letra[26];
-	private Nome vetorFim[] = new Nome[26];
+public class EdEx1 {
+
+	private final LetraEx1 vetorLetra[] = new LetraEx1[26];
+	private NomeEx1 vetorFim[] = new NomeEx1[26];
 	private int qntd;
 
-	public ED() {
+	public EdEx1() {
 		for (int i = 0; i < vetorLetra.length; i++) {
-			vetorLetra[i] = new Letra();
+			vetorLetra[i] = new LetraEx1();
 		}
 		vetorLetra[0].letra = 'A';
 		vetorLetra[1].letra = 'B';
@@ -47,7 +49,7 @@ public class ED {
 		return -1;
 	}
 
-	private boolean auxGetProximoEmaior(Nome name, Nome aux) {
+	private boolean auxGetProximoEmaior(NomeEx1 name, NomeEx1 aux) {
 		if ((name.getNome().toUpperCase().charAt(1) == aux.getNome().toUpperCase().charAt(1))) {
 			int limiteNome = name.getNome().length();
 			int limiteAux = aux.getNome().length();
@@ -91,13 +93,13 @@ public class ED {
 	}
 
 	public void adicionar(String nome) {
-		Nome name = new Nome(nome);
+		NomeEx1 name = new NomeEx1(nome);
 		int indice = indice(nome);
 		if (vetorLetra[indice].prox == null) {
-			vetorLetra[indice].prox = new Nome(nome);
-			vetorFim[indice] = new Nome(nome);
+			vetorLetra[indice].prox = new NomeEx1(nome);
+			vetorFim[indice] = new NomeEx1(nome);
 		} else {
-			Nome aux = vetorLetra[indice].prox;
+			NomeEx1 aux = vetorLetra[indice].prox;
 			int f = 0;
 			while ((aux != null) && (f != 1)) {
 				if ((nome.toUpperCase().charAt(1) == aux.getNome().toUpperCase().charAt(1))) {
@@ -284,15 +286,13 @@ public class ED {
 		boolean situacao = estaVazia();
 		if (situacao == false) {
 			int indice = indice(nome);
-			Nome aux = vetorLetra[indice].prox;
+			NomeEx1 aux = vetorLetra[indice].prox;
 			while (aux != null) {
 				if (nome.toUpperCase().equals(aux.getNome().toUpperCase())) {
 					return true;
 				}
 				aux = aux.getProximo();
 			}
-		} else {
-			System.out.println("impossível pesquisar pois a estrutura de dados está vazia");
 		}
 		return false;
 	}
@@ -303,7 +303,7 @@ public class ED {
 			boolean verifica = pesquisa(nome);
 			if (verifica == true) {
 				int indice = indice(nome);
-				Nome aux = vetorLetra[indice].prox;
+				NomeEx1 aux = vetorLetra[indice].prox;
 				int f = 0;
 				while (f != 1) {
 					if (nome.toUpperCase().equals(aux.getNome().toUpperCase())) {
@@ -333,10 +333,10 @@ public class ED {
 				}
 				qntd--;
 			} else {
-				System.out.println("impossível excluir pois o nome não existe na estrutura de dados");
+				JOptionPane.showMessageDialog(null, "Nome não existe na estrutura de dados");
 			}
 		} else {
-			System.out.println("impossível excluir pois a estrutura de dados está vazia");
+			JOptionPane.showMessageDialog(null, "Estrutura de dados está vazia");
 		}
 	}
 
@@ -348,10 +348,10 @@ public class ED {
 				excluir(nomeAtual);
 				adicionar(Renomeio);
 			} else {
-				System.out.println("impossível renomear pois o nome não existe na estrutura de dados");
+				JOptionPane.showMessageDialog(null, "Nome não existe na estrutura de dados");
 			}
 		} else {
-			System.out.println("impossível renomear pois a estrutura de dados está vazia");
+			JOptionPane.showMessageDialog(null, "Estrutura de dados está vazia");
 		}
 	}
 
@@ -374,12 +374,31 @@ public class ED {
 					indice = i;
 				}
 			}
-			Nome aux = vetorLetra[indice].prox;
+			StringBuffer buffer = new StringBuffer();
+			buffer.append(vetorLetra[indice].letra + " --> ");
+			NomeEx1 aux = vetorLetra[indice].prox;
 			while (aux != null) {
-				System.out.println(aux.getNome());
+				buffer.append(aux.getNome() + " --> ");
 				aux = aux.getProximo();
 			}
+			System.out.println(buffer);
+			System.out.println("-----------------------------");
+		} else {
+			JOptionPane.showMessageDialog(null, "Estrutura de dados está vazia");
 		}
+	}
 
+	public void mostrarLista() {
+		for (int i = 0; i < 26; i++) {
+			StringBuffer buffer = new StringBuffer();
+			buffer.append(vetorLetra[i].letra + " --> ");
+			NomeEx1 aux = vetorLetra[i].prox;
+			while (aux != null) {
+				buffer.append(aux.getNome() + " --> ");
+				aux = aux.getProximo();
+			}
+			System.out.println(buffer);
+			System.out.println("-----------------------------");
+		}
 	}
 }

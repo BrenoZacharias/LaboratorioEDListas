@@ -1,12 +1,14 @@
 package ex2;
 
-public class EDVetorCircular {
+import javax.swing.JOptionPane;
+
+public class EDVetorCircularEx2 {
 	Object ed[];
 	int frente;
 	int fim;
 	int tamanho;
 
-	public EDVetorCircular() {
+	public EDVetorCircularEx2() {
 		ed = new Object[10];
 		frente = -1;
 		fim = -1;
@@ -23,7 +25,7 @@ public class EDVetorCircular {
 			}
 			tamanho++;
 		} else {
-			System.out.println("Está cheia");
+				JOptionPane.showMessageDialog(null, "Está cheia");
 		}
 	}
 
@@ -39,8 +41,10 @@ public class EDVetorCircular {
 			}
 			tamanho--;
 			return ed[aux];
+		} else{
+			JOptionPane.showMessageDialog(null, "Está vazia");
+			return "Está vazia";
 		}
-		return "Está vazia";
 	}
 
 	public Object cabeca() {

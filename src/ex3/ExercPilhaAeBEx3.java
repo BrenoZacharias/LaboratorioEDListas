@@ -2,10 +2,10 @@ package ex3;
 import javax.swing.JOptionPane;
 
 
-public class ExercPilhaAeB {
+public class ExercPilhaAeBEx3 {
 
 	public static void main(String[] args) {
-		controller p = new controller();
+		controllerEx3 p = new controllerEx3();
 		
 		JOptionPane.showMessageDialog(null, p.estaVaziaA());
 		JOptionPane.showMessageDialog(null, p.estaVaziaB());
