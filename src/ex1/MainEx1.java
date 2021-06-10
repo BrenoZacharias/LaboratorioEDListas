@@ -15,7 +15,6 @@ public class MainEx1 {
 	ed.adicionar("cz");
 	ed.adicionar("cicero");
 	ed.mostrarNomesDeUmaLetra("c");
-	System.out.println();
 	ed.excluir("caio");
 	ed.excluir("cz");
 	ed.adicionar("car");
